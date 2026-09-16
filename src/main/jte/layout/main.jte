@@ -14,7 +14,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>${title} — Brew Reporting</title>
+    <title>${title}</title>
     <link rel="icon" href="/favicon.ico" sizes="48x48">
     <link rel="icon" type="image/svg+xml" href="/icon.svg">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -49,7 +49,6 @@
         <a href="/" class="flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-primary rounded">
           <%-- Canonical theme-invariant mark: the SVG carries its own gold, glyph and radius. --%>
           <img src="/icon.svg" alt="" aria-hidden="true" class="h-9 w-9">
-          <span class="font-semibold text-base tracking-tight text-text">Brew<span class="text-primary">.</span><span class="text-success">QA</span></span>
         </a>
         <span class="mx-1 h-5 w-px bg-border-subtle" aria-hidden="true"></span>
         <nav class="flex gap-1 text-sm" aria-label="Primary">
@@ -57,8 +56,6 @@
              class="px-3 py-1.5 rounded-md transition-colors ${"reports".equals(activeNav) ? "bg-surface text-primary font-semibold" : "text-text-muted hover:text-text hover:bg-surface"}">Reports</a>
           <a href="/app/results"
              class="px-3 py-1.5 rounded-md transition-colors ${"results".equals(activeNav) ? "bg-surface text-primary font-semibold" : "text-text-muted hover:text-text hover:bg-surface"}">Results</a>
-          <a href="/app/about"
-             class="px-3 py-1.5 rounded-md transition-colors ${"about".equals(activeNav) ? "bg-surface text-primary font-semibold" : "text-text-muted hover:text-text hover:bg-surface"}">About</a>
           <a href="/swagger-ui.html" target="_blank" rel="noopener"
              class="px-3 py-1.5 rounded-md text-text-muted hover:text-text hover:bg-surface transition-colors">Swagger ↗</a>
         </nav>
@@ -95,18 +92,8 @@
     <footer class="mt-auto border-t border-border-subtle bg-bg-elevated">
       <div class="w-full max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-wrap items-center justify-between gap-3 text-sm text-text-muted">
         <div class="flex items-center gap-2">
-          <span class="font-semibold text-text">Brew<span class="text-primary">.</span><span class="text-success">QA</span></span>
-          <span class="text-border">·</span>
-          <span>© 2026</span>
+          <span>© 2023-2026, Отдел автоматизированного тестирования, КБ «Ренессанс Кредит» (ООО)</span>
         </div>
-        <nav class="flex flex-wrap items-center gap-4" aria-label="Footer">
-          <a href="https://github.com/kochetkov-ma/allure-server" target="_blank" rel="noopener"
-             class="hover:text-primary transition-colors">Allure Server on GitHub ↗</a>
-          <a href="https://brewcode.app" target="_blank" rel="noopener"
-             class="hover:text-primary transition-colors">BrewCode ↗</a>
-          <a href="#" aria-disabled="true" title="Coming soon"
-             class="text-border cursor-not-allowed">BrewQA (soon)</a>
-        </nav>
       </div>
     </footer>
   </body>

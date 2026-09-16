@@ -22,10 +22,6 @@
   var BRAND_HTML =
     '<a href="/" class="brew-logo" aria-label="Brew.QA home">' +
       '<img class="brew-logo__badge" src="' + iconHref + '" alt="" aria-hidden="true">' +
-      '<span class="brew-logo__wordmark">Brew' +
-        '<span class="brew-logo__dot">.</span>' +
-        '<span class="brew-logo__accent">QA</span>' +
-      '</span>' +
     '</a>';
 
   function rebrand(root) {
@@ -41,7 +37,7 @@
   }
 
   function start() {
-    document.title = 'API — Brew Reporting';
+    document.title = 'API';
     if (rebrand(document)) return;
     var observer = new MutationObserver(function () {
       if (rebrand(document)) {

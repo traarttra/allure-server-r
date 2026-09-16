@@ -19,16 +19,8 @@
 
     var word = document.createElement('span');
     word.className = 'brew-brand-word';
-    var brew = document.createTextNode('Brew');
-    var dot = document.createElement('span');
-    dot.className = 'brew-dot';
-    dot.textContent = '.';
-    var qa = document.createElement('span');
-    qa.className = 'brew-qa';
-    qa.textContent = 'QA';
+    var brew = document.createTextNode('Ренессанс');
     word.appendChild(brew);
-    word.appendChild(dot);
-    word.appendChild(qa);
 
     a.appendChild(badge);
     a.appendChild(word);
