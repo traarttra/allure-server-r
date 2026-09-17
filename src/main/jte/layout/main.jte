@@ -28,7 +28,7 @@
       (function () {
         try {
           var s = localStorage.getItem('allure-server-theme');
-          var p = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+          var p = 'dark';
           document.documentElement.dataset.theme = s || p;
         } catch (e) { document.documentElement.dataset.theme = 'dark'; }
       })();
@@ -92,7 +92,7 @@
     <footer class="mt-auto border-t border-border-subtle bg-bg-elevated">
       <div class="w-full max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-wrap items-center justify-between gap-3 text-sm text-text-muted">
         <div class="flex items-center gap-2">
-          <span>© 2023-2026, Отдел автоматизированного тестирования, КБ «Ренессанс Кредит» (ООО)</span>
+          <span>© ${java.time.Year.now().getValue()}, Отдел автоматизированного тестирования, КБ «Ренессанс Кредит» (ООО)</span>
         </div>
       </div>
     </footer>

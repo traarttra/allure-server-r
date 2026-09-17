@@ -5,18 +5,14 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.annotation.Bean;
-import org.springframework.http.HttpMethod;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.DefaultAuthenticationEventPublisher;
-import org.springframework.security.authentication.ProviderManager;
+import org.springframework.http.HttpMethod;
+import org.springframework.security.authentication.*;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
-import org.springframework.security.authentication.AuthenticationTrustResolver;
-import org.springframework.security.authentication.AuthenticationTrustResolverImpl;
 import org.springframework.security.authorization.AuthorizationDecision;
 import org.springframework.security.authorization.AuthorizationManager;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer.FrameOptionsConfig;
 import org.springframework.security.core.Authentication;
@@ -176,7 +172,6 @@ public class SecurityConfiguration {
                 it.requestMatchers(WebConfiguration.CSS_PATH_PATTERN,
                         WebConfiguration.JS_PATH_PATTERN,
                         WebConfiguration.IMG_PATH_PATTERN,
-                        "/swagger/**",
                         "/icon.svg",
                         "/favicon.ico",
                         "/apple-touch-icon.png",
@@ -199,6 +194,14 @@ public class SecurityConfiguration {
                         .requestMatchers("/app/signin").authenticated()
                         .anyRequest().authenticated();
                 } else {
+                    it.requestMatchers(
+                        "/swagger-ui.html",
+                        "/swagger-ui/**",
+                        "/swagger-ui/index.html",
+                        "/v3/api-docs",
+                        "/v3/api-docs/**",
+                        "/swagger/**"
+                    ).hasRole("ADMIN");
                     // Generated report content is gated by the SAME runtime toggle as /api/**:
                     // when requireApiAuth is true, anonymous report reads are blocked (401); when
                     // false, the guest read-only fallback still serves them. Without this, report
