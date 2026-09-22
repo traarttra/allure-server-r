@@ -30,6 +30,7 @@
   function apply(root) {
     var brand = root.querySelector('.side-nav__brand');
     if (!brand) return false;
+    brand.removeAttribute('href');
     if (brand.querySelector('.' + MARKER)) return true;
     while (brand.firstChild) brand.removeChild(brand.firstChild);
     brand.appendChild(buildLink());
