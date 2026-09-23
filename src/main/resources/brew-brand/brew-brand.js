@@ -20,7 +20,13 @@
     var word = document.createElement('span');
     word.className = 'brew-brand-word';
     var brew = document.createTextNode('Ренессанс');
+    var dot = document.createElement('span');
+    dot.className = 'brew-dot';
+    var qa = document.createElement('span');
+    qa.className = 'brew-qa';
     word.appendChild(brew);
+    word.appendChild(dot);
+    word.appendChild(qa);
 
     a.appendChild(badge);
     a.appendChild(word);

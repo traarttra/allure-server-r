@@ -24,13 +24,13 @@ Values are ported from `brewpage-app/frontend/src/css/tokens.css` — do not inv
 |---|---|---|---|---|---|
 | `bg` | `#141414` | `20 20 20` | `#FAFAF9` | `250 250 249` | page body |
 | `bg-elevated` | `#0A0A0A` | `10 10 10` | `#FFFFFF` | `255 255 255` | header + footer |
-| `card` | `#1C1A14` | `28 26 20` | `#FFFFFF` | `255 255 255` | elevated panels (`.card`) |
-| `surface` | `#272318` | `39 35 24` | `#F5F3EE` | `245 243 238` | filter rows, striping, nav hover |
-| `border` | `#8C7039` | `140 112 57` | `#D4C5A9` | `212 197 169` | panel borders |
-| `border-subtle` | `#272318` | `39 35 24` | `#E7E5E4` | `231 229 228` | row dividers |
-| `primary` | `#EBBB40` | `235 187 64` | `#C65029` | `198 80 41` | brand accent, active nav, CTA, focus ring |
-| `primary-hi` | `#FAE96F` | `250 233 111` | `#B5431E` | `181 67 30` | hover / headings / extra contrast |
-| `text` | `#D6D3D1` | `214 211 209` | `#1C1A14` | `28 26 20` | primary text |
+| `card` | `#1C1A14` | `20 20 20` | `#FFFFFF` | `255 255 255` | elevated panels (`.card`) |
+| `surface` | `#272318` | `50 62 72` | `#F5F3EE` | `255 219 238` | filter rows, striping, nav hover |
+| `border` | `#8C7039` | `47 53 59` | `#D4C5A9` | `255 67 164` | panel borders |
+| `border-subtle` | `#272318` | `50 62 72` | `#E7E5E4` | `231 229 228` | row dividers |
+| `primary` | `#EBBB40` | `255 0 120` | `#C65029` | `215 24 104` | brand accent, active nav, CTA, focus ring |
+| `primary-hi` | `#FAE96F` | `255 51 146` | `#B5431E` | `171 19 82` | hover / headings / extra contrast |
+| `text` | `#D6D3D1` | `214 211 209` | `#1C1A14` | `20 20 20` | primary text |
 | `text-muted` | — | `154 149 142` | — | `82 78 70` | secondary labels (flattened alpha) |
 | `success` | `#649C67` | `100 156 103` | `#2E7D33` | `46 125 51` | green accent (wordmark "QA", toasts) |
 | `warning` | `#DF8D03` | `223 141 3` | inherits dark | inherits dark | amber warn |

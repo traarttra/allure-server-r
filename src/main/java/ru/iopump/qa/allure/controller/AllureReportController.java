@@ -18,15 +18,7 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.server.ResponseStatusException;
 import ru.iopump.qa.allure.entity.ReportEntity;
@@ -111,11 +103,11 @@ public class AllureReportController {
 
     @SneakyThrows
     @Operation(summary = "Upload allure-report.zip with generated allure report files")
-    @PostMapping(value = "{reportPath}", consumes = {"multipart/form-data"})
+    @PostMapping(value = "upload", consumes = {"multipart/form-data"})
     @ResponseStatus(HttpStatus.CREATED)
     @CacheEvict(value = CACHE, allEntries = true) // update results cache
     public ReportResponse uploadReport(
-        @PathVariable("reportPath") @NonNull @NotBlank(message = "reportPath must not be blank") String reportPath,
+        @RequestParam("reportPath") @NonNull @NotBlank(message = "reportPath must not be blank") String reportPath,
         @Parameter(description = "File as multipart body. File must be an zip archive and not be empty. Nested type is 'application/zip'",
             name = "allureReportArchive",
             example = "allure-report.zip",
