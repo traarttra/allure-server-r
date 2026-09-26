@@ -9,8 +9,6 @@
     a.href = HOME_URL;
     a.setAttribute('aria-label', 'Brew.QA home');
 
-    // Badge = canonical mark image. BrandingService copies favicon.svg into
-    // every report root, so the relative URL resolves per-report.
     var badge = document.createElement('img');
     badge.className = 'brew-brand-badge';
     badge.setAttribute('aria-hidden', 'true');
@@ -44,9 +42,10 @@
   }
 
   function start() {
-    if (apply(document)) return;
+    apply(document);
+
     var observer = new MutationObserver(function () {
-      if (apply(document)) observer.disconnect();
+      apply(document);
     });
     observer.observe(document.body, { childList: true, subtree: true });
   }
